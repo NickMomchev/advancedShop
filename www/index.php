@@ -1,12 +1,18 @@
 <?php
 
-defined('DS') or DEFINE('DS', DIRECTORY_SEPARATOR);
+defined('DS') or DEFINE('DS', DIRECTORY_SEPARATOR);                             // Константа разделителя директорий
 
-include_once '..' . DS . 'config' . DS . 'config.php';
-include_once '..' . DS . 'library' . DS . 'mainFunctions.php';
+include_once '..' . DS . 'config' . DS . 'config.php';                          // Инициализация настроек
+include_once '..' . DS . 'library' . DS . 'mainFunctions.php';                  // Основные функции
 
-$controllerName = isset($_GET['controller']) ? ucfirst($_GET['controller']) : 'Index';
+// получаем имена вызываемых контроллера и экшина
+$controller = filter_input(INPUT_GET, 'controller');
+$action = filter_input(INPUT_GET, 'action');
 
-$actionName = isset($_GET['action']) ? $_GET['action'] : 'index';
+// определяем вызываемый контроллер
+$controllerName = $controller ? ucfirst($controller) : 'Index';
+
+// определяем вызываемую функцию
+$actionName = $action ? $action : 'index';
 
 loadPage($controllerName, $actionName);
