@@ -1,6 +1,6 @@
 <?php
 
-defined('DS') or DEFINE('DS', DIRECTORY_SEPARATOR);                             // Константа разделителя директорий
+DEFINED('DS') or DEFINE('DS', DIRECTORY_SEPARATOR);                             // Константа разделителя директорий
 
 include_once '..' . DS . 'config' . DS . 'config.php';                          // Инициализация настроек
 include_once '..' . DS . 'library' . DS . 'mainFunctions.php';                  // Основные функции
@@ -15,4 +15,4 @@ $controllerName = $controller ? ucfirst($controller) : 'Index';
 // определяем вызываемую функцию
 $actionName = $action ? $action : 'index';
 
-loadPage($controllerName, $actionName);
+loadPage($smarty, $controllerName, $actionName);
