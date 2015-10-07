@@ -15,14 +15,14 @@ defined('PathPostfix') or DEFINE('PathPostfix', 'Controller.php');
 $template = 'default';
 
 // пути к файлам шаблонов (*.tpl)
-DEFINED('TemplatePrefix') or DEFINE('TemplatePrefix', '..' . DS . 'views' . DS . $template . DS);
+DEFINED('TemplatePrefix') or DEFINE('TemplatePrefix', '../views/' . $template . '/');
 DEFINED('TemplatePostfix') or DEFINE('TemplatePostfix', '.tpl');
 
 // пути к файлам шаблонов в веб пространстве
-DEFINED('TemplateWebPath') or DEFINE('TemplateWebPath', DS . 'templates' . DS . $template . DS);
+DEFINED('TemplateWebPath') or DEFINE('TemplateWebPath', '/templates/' . $template . '/');
 //<
 
-// Инициализация шаблонизатора Smarty
+//> Инициализация шаблонизатора Smarty
 // put full path to Smarty.class.php
 require_once '..' . DS . 'library' . DS . 'Smarty' . DS . 'libs' . DS . 'Smarty.class.php';
 $smarty = new Smarty();
