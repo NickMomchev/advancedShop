@@ -44,3 +44,22 @@ function dd($value = null, $die = 1){
         die;
     }
 }
+
+/**
+ *Преобразование результата работы функции выборки в ассоциативный массив
+ * 
+ * @param recordset $rs набор строк - результат работы SELECT
+ * @return array
+ */
+function createSmartyRsArray($rs){
+    if(!$rs){
+        return false;
+    }
+
+    $smartyRs = Array();
+    while ($row = mysql_fetch_assoc($rs)) {
+        $row ? $smartyRs[] = $row : null;
+    }
+
+    return $smartyRs;
+}
