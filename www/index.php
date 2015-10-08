@@ -3,6 +3,7 @@
 DEFINED('DS') or DEFINE('DS', DIRECTORY_SEPARATOR);                             // Константа разделителя директорий
 
 include_once '..' . DS . 'config' . DS . 'config.php';                          // Инициализация настроек
+include_once '..' . DS . 'config' . DS . 'db.php';                              // Инициализация базы данных
 include_once '..' . DS . 'library' . DS . 'mainFunctions.php';                  // Основные функции
 
 // получаем имена вызываемых контроллера и экшина

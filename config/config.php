@@ -7,8 +7,8 @@
  */
 
 //> Константы для обращения к контроллерам
-defined('PathPrefix') or DEFINE('PathPrefix', '..' . DS . 'controllers' . DS);
-defined('PathPostfix') or DEFINE('PathPostfix', 'Controller.php');
+DEFINED('PathPrefix') or DEFINE('PathPrefix', '..' . DS . 'controllers' . DS);
+DEFINED('PathPostfix') or DEFINE('PathPostfix', 'Controller.php');
 //<
 
 //> используемый шаблон
@@ -33,4 +33,8 @@ $smarty->setCacheDir('..' . DS . 'tmp' . DS . 'smarty' . DS . 'cache');
 $smarty->setConfigDir('..' . DS . 'library' . DS . 'Smarty' . DS . 'configs');
 
 $smarty->assign('templateWebPath', TemplateWebPath);
+//<
+
+//> Константы кодировок
+DEFINED('DB_CHARSET') or DEFINE('DB_CHARSET', 'utf8');
 //<
